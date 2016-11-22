@@ -19,7 +19,7 @@ class ViewController: UIViewController,RETrimControlDelegate {
     var trimControl: RETrimControl!
     var startTimeInSeconds : Int64 = 0
     var stopTimeInSeconds : Int64 = 0
-    var localURLPath : NSURL!
+    var localURLPath : URL!
     var isItFirstTime : Bool = true
     
     
@@ -35,7 +35,7 @@ class ViewController: UIViewController,RETrimControlDelegate {
     //Setup Intial UI - UILabels, UIButtons etc
     func setupInitialUIControls(){
         
-        trimControl = RETrimControl(frame: CGRectMake(self.view.frame.size.width * 0.03125, (self.view.frame.size.height - 150) / 2.0, self.view.frame.size.width * 0.9375, 100))
+        trimControl = RETrimControl(frame: CGRect(x: self.view.frame.size.width * 0.03125, y: (self.view.frame.size.height - 150) / 2.0, width: self.view.frame.size.width * 0.9375, height: 100))
         trimControl.delegate = self
         self.view!.addSubview(trimControl)
         trimControl.length = 300
@@ -45,26 +45,26 @@ class ViewController: UIViewController,RETrimControlDelegate {
         doneUIButton = UIButton()
         
         audioDurationUILabel.font = UIFont(name: "MarkerFelt-Thin", size: self.view.frame.size.height * 0.02816901408)
-        audioDurationUILabel.textColor = UIColor.grayColor()
+        audioDurationUILabel.textColor = UIColor.gray
         
         
-        audioPlayerUIButton.frame = CGRectMake(self.view.frame.size.width * 0.03125, trimControl.frame.origin.y + trimControl.frame.size.height + 10, self.view.frame.size.height * 0.04225352113, self.view.frame.size.height * 0.04225352113)
-        audioPlayerUIButton.setImage(UIImage(named: "play_audio.png"), forState: UIControlState.Normal)
-        audioPlayerUIButton.backgroundColor = UIColor.redColor()
+        audioPlayerUIButton.frame = CGRect(x: self.view.frame.size.width * 0.03125, y: trimControl.frame.origin.y + trimControl.frame.size.height + 10, width: self.view.frame.size.height * 0.04225352113, height: self.view.frame.size.height * 0.04225352113)
+        audioPlayerUIButton.setImage(UIImage(named: "play_audio.png"), for: UIControlState())
+        audioPlayerUIButton.backgroundColor = UIColor.red
         audioPlayerUIButton.layer.cornerRadius = audioPlayerUIButton.frame.size.height / 2
-        audioDurationUILabel.frame = CGRectMake(audioPlayerUIButton.frame.origin.x + audioPlayerUIButton.frame.size.width + 20, trimControl.frame.origin.y + trimControl.frame.size.height + 10, 200, self.view.frame.size.height * 0.04225352113)
-        audioPlayerUIButton.addTarget(self, action: #selector(self.audioPlayerButtonTapped), forControlEvents: .TouchUpInside)
-        audioPlayerUIButton.enabled = false
+        audioDurationUILabel.frame = CGRect(x: audioPlayerUIButton.frame.origin.x + audioPlayerUIButton.frame.size.width + 20, y: trimControl.frame.origin.y + trimControl.frame.size.height + 10, width: 200, height: self.view.frame.size.height * 0.04225352113)
+        audioPlayerUIButton.addTarget(self, action: #selector(self.audioPlayerButtonTapped), for: .touchUpInside)
+        audioPlayerUIButton.isEnabled = false
         self.view.addSubview(audioDurationUILabel)
         self.view.addSubview(audioPlayerUIButton)
         
-        doneUIButton.frame = CGRectMake(self.view.frame.size.width - 100, self.view.frame.size.height * 0.2464788732, 90, 30)
-        doneUIButton.setTitle("Done", forState: UIControlState.Normal)
-        doneUIButton.backgroundColor = UIColor.blackColor()
-        doneUIButton.titleLabel?.textColor = UIColor.whiteColor()
-        doneUIButton.addTarget(self, action: #selector(self.didEditButtonClick), forControlEvents: .TouchUpInside)
+        doneUIButton.frame = CGRect(x: self.view.frame.size.width - 100, y: self.view.frame.size.height * 0.2464788732, width: 90, height: 30)
+        doneUIButton.setTitle("Done", for: UIControlState())
+        doneUIButton.backgroundColor = UIColor.black
+        doneUIButton.titleLabel?.textColor = UIColor.white
+        doneUIButton.addTarget(self, action: #selector(self.didEditButtonClick), for: .touchUpInside)
         doneUIButton.layer.cornerRadius = 5.0
-        doneUIButton.hidden = true
+        doneUIButton.isHidden = true
         self.view.addSubview(doneUIButton)
         
     }
@@ -73,19 +73,19 @@ class ViewController: UIViewController,RETrimControlDelegate {
     func downloadMp3FileFromWeb(){
         
         //  First you need to create your audio url
-        if let audioUrl = NSURL(string: "https://az817931.vo.msecnd.net/audiofiles/normalized-meet_318122810a836ad9c314508833ab39e1ed8176c_r.wav") {
+        if let audioUrl = URL(string: "https://az817931.vo.msecnd.net/audiofiles/normalized-meet_318122810a836ad9c314508833ab39e1ed8176c_r.wav") {
         
         //if let audioUrl = NSURL(string: "http://radio.spainmedia.es/wp-content/uploads/2015/12/tailtoddle_lo4.mp3") {
             
             // then lets create your document folder url
-            let documentsDirectoryURL =  NSFileManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask).first!
+            let documentsDirectoryURL =  FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
             
             // lets create your destination file url
-            let destinationUrl = documentsDirectoryURL.URLByAppendingPathComponent(audioUrl.lastPathComponent ?? "audio.wav")
+            let destinationUrl = documentsDirectoryURL.appendingPathComponent(audioUrl.lastPathComponent ?? "audio.wav")
             print(destinationUrl)
             
             // to check if it exists before downloading it
-            if NSFileManager().fileExistsAtPath(destinationUrl.path!) {
+            if FileManager().fileExists(atPath: destinationUrl.path) {
                 //The file already exists at path
                 
                 self.localURLPath = destinationUrl
@@ -95,11 +95,11 @@ class ViewController: UIViewController,RETrimControlDelegate {
             } else {
                 
                 // you can use NSURLSession.sharedSession to download the data asynchronously
-                NSURLSession.sharedSession().downloadTaskWithURL(audioUrl, completionHandler: { (location, response, error) -> Void in
-                    guard let location = location where error == nil else { return }
+                URLSession.shared.downloadTask(with: audioUrl, completionHandler: { (location, response, error) -> Void in
+                    guard let location = location, error == nil else { return }
                     do {
                         // after downloading your file you need to move it to your destination url
-                        try NSFileManager().moveItemAtURL(location, toURL: destinationUrl)
+                        try FileManager().moveItem(at: location, to: destinationUrl)
                         print("File moved to documents folder %@",destinationUrl)
                         
                         self.localURLPath = destinationUrl
@@ -116,37 +116,37 @@ class ViewController: UIViewController,RETrimControlDelegate {
     }
     
     //Delegate method to get slider values(Time)
-    func trimControl(trimControl: RETrimControl, didChangeLeftValue leftValue: String, rightValue: String) {
+    func trimControl(_ trimControl: RETrimControl, didChangeLeftValue leftValue: String, rightValue: String) {
         
         audioDurationUILabel.text = String(format: "%@ - %@", leftValue, rightValue)
         self.setupStartAndStopTimes(leftValue,rightSliderValueString: rightValue)
-        doneUIButton.hidden = false
+        doneUIButton.isHidden = false
     }
     
     //Tapped on Done button after trimming audio
-    func didEditButtonClick(sender: AnyObject) {
+    func didEditButtonClick(_ sender: AnyObject) {
         
-        doneUIButton.hidden = true
+        doneUIButton.isHidden = true
         player.stop()
-        audioPlayerUIButton.setImage(UIImage(named: "play_audio.png"), forState: UIControlState.Normal)
+        audioPlayerUIButton.setImage(UIImage(named: "play_audio.png"), for: UIControlState())
         isItPlayingAudio = false
         
         if (trimControl != nil){
             
             trimControl.removeFromSuperview()
-            trimControl = RETrimControl(frame: CGRectMake(self.view.frame.size.width * 0.03125, (self.view.frame.size.height - 150) / 2.0, self.view.frame.size.width * 0.9375, 100))
+            trimControl = RETrimControl(frame: CGRect(x: self.view.frame.size.width * 0.03125, y: (self.view.frame.size.height - 150) / 2.0, width: self.view.frame.size.width * 0.9375, height: 100))
             trimControl.length = stopTimeInSeconds - startTimeInSeconds
             trimControl.delegate = self
             self.view.addSubview(trimControl)
             
         }
         
-        print(self.localURLPath.path!)
+        print(self.localURLPath.path)
         
-        if NSFileManager.defaultManager().fileExistsAtPath(self.localURLPath.path!) {
+        if FileManager.default.fileExists(atPath: self.localURLPath.path) {
             print("2.File exists")
             
-            if let asset : AVAsset = AVAsset(URL: self.localURLPath ) {
+            if let asset : AVAsset = AVAsset(url: self.localURLPath ) {
                 // do something with the asset
                 self.trimWavFile(asset, fileName: "trimmed")
                 
@@ -155,9 +155,9 @@ class ViewController: UIViewController,RETrimControlDelegate {
         }else{
             print("2.File doesn't exists")
             
-            if let resourceUrl = NSBundle.mainBundle().URLForResource("SourceAudio", withExtension: "mp3") {
+            if let resourceUrl = Bundle.main.url(forResource: "SourceAudio", withExtension: "mp3") {
                 
-                if let asset : AVAsset = AVAsset(URL: resourceUrl ) {
+                if let asset : AVAsset = AVAsset(url: resourceUrl ) {
                     // do something with the asset
                     self.trimWavFile(asset, fileName: "trimmed")
                     
@@ -169,30 +169,30 @@ class ViewController: UIViewController,RETrimControlDelegate {
     }
     
     //Pause and play audio file
-    func audioPlayerButtonTapped(sender: AnyObject) {
+    func audioPlayerButtonTapped(_ sender: AnyObject) {
         
         if !isItPlayingAudio {
             
             player.play()
             
-            audioPlayerUIButton.setImage(UIImage(named: "pause_audio.png"), forState: UIControlState.Normal)
+            audioPlayerUIButton.setImage(UIImage(named: "pause_audio.png"), for: UIControlState())
             isItPlayingAudio = true
             
         }else{
             
             player.pause()
             
-            audioPlayerUIButton.setImage(UIImage(named: "play_audio.png"), forState: UIControlState.Normal)
+            audioPlayerUIButton.setImage(UIImage(named: "play_audio.png"), for: UIControlState())
             isItPlayingAudio = false
         }
         
     }
     
     //To set up start and stop times
-    func setupStartAndStopTimes(leftSliderValueString:String, rightSliderValueString:String){
+    func setupStartAndStopTimes(_ leftSliderValueString:String, rightSliderValueString:String){
         
-        let startTimeValuesArray = leftSliderValueString.componentsSeparatedByString(":")
-        let stopTimeValuesArray = rightSliderValueString.componentsSeparatedByString(":")
+        let startTimeValuesArray = leftSliderValueString.components(separatedBy: ":")
+        let stopTimeValuesArray = rightSliderValueString.components(separatedBy: ":")
         
         startTimeInSeconds = (Int64(startTimeValuesArray[0])! * 60) + Int64(startTimeValuesArray[1])!
         stopTimeInSeconds = (Int64(stopTimeValuesArray[0])! * 60) + Int64(stopTimeValuesArray[1])!
@@ -200,16 +200,16 @@ class ViewController: UIViewController,RETrimControlDelegate {
     }
     
     //Trim the .wav file based on start and stop times
-    func trimWavFile(asset:AVAsset, fileName:String) {
+    func trimWavFile(_ asset:AVAsset, fileName:String) {
         
-        let documentsDirectory = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)[0]
-        let trimmedSoundFileURL = documentsDirectory.URLByAppendingPathComponent(String(format: "%@.m4a", fileName))
+        let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+        let trimmedSoundFileURL = documentsDirectory.appendingPathComponent(String(format: "%@.m4a", fileName))
         
-        let filemanager = NSFileManager.defaultManager()
-        if filemanager.fileExistsAtPath(trimmedSoundFileURL.path!) {
+        let filemanager = FileManager.default
+        if filemanager.fileExists(atPath: trimmedSoundFileURL.path) {
             print("sound exists")
             do{
-                try NSFileManager.defaultManager().removeItemAtPath(trimmedSoundFileURL.path!)
+                try FileManager.default.removeItem(atPath: trimmedSoundFileURL.path)
             }catch{
             }
         }else{
@@ -237,11 +237,11 @@ class ViewController: UIViewController,RETrimControlDelegate {
         
         
         // do it
-        exporter!.exportAsynchronouslyWithCompletionHandler({
+        exporter!.exportAsynchronously(completionHandler: {
             switch exporter!.status {
-            case  AVAssetExportSessionStatus.Failed:
+            case  AVAssetExportSessionStatus.failed:
                 print("export failed \(exporter!.error)")
-            case AVAssetExportSessionStatus.Cancelled:
+            case AVAssetExportSessionStatus.cancelled:
                 print("export cancelled \(exporter!.error)")
             default:
                 print("export complete")
@@ -253,19 +253,19 @@ class ViewController: UIViewController,RETrimControlDelegate {
     }
     
     //Play music file using AVAudioPlayer
-    func playMusicFromFilePath(resourceUrl: NSURL) {
+    func playMusicFromFilePath(_ resourceUrl: URL) {
         
-        if NSFileManager.defaultManager().fileExistsAtPath(resourceUrl.path!) {
+        if FileManager.default.fileExists(atPath: resourceUrl.path) {
             
             do {
-                self.player = try AVAudioPlayer(contentsOfURL: resourceUrl)
+                self.player = try AVAudioPlayer(contentsOf: resourceUrl)
                 player.prepareToPlay()
                 player.volume = 1.0
                 trimControl.length = (NSInteger)(player.duration)
-                audioPlayerUIButton.enabled = true
+                audioPlayerUIButton.isEnabled = true
                 
                 if(isItFirstTime){
-                    audioDurationUILabel.text = String(format: "%.2f - %@", 0.00, String(format: "%d.%d",(NSInteger)(player.duration/60),(NSInteger)(player.duration%60)))
+                    audioDurationUILabel.text = String(format: "%.2f - %@", 0.00, String(format: "%d.%d",(NSInteger)(player.duration/60),(NSInteger)(player.duration.truncatingRemainder(dividingBy: 60))))
                     print(audioDurationUILabel.text)
                     isItFirstTime = false
                 }
