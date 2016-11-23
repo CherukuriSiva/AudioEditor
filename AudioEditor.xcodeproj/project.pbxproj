@@ -7,42 +7,44 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		183BC8151D637945004D6988 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183BC8141D637945004D6988 /* AppDelegate.swift */; };
-		183BC8171D637945004D6988 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183BC8161D637945004D6988 /* ViewController.swift */; };
 		183BC81C1D637945004D6988 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 183BC81B1D637945004D6988 /* Assets.xcassets */; };
 		183BC81F1D637945004D6988 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 183BC81D1D637945004D6988 /* LaunchScreen.storyboard */; };
-		183BC83A1D637D5E004D6988 /* RETrimControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 183BC8371D637D5E004D6988 /* RETrimControl.m */; };
-		183BC83B1D637D5E004D6988 /* RETrimPopover.m in Sources */ = {isa = PBXBuildFile; fileRef = 183BC8391D637D5E004D6988 /* RETrimPopover.m */; };
-		183BC83D1D637D8A004D6988 /* RETrimControl.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 183BC83C1D637D8A004D6988 /* RETrimControl.bundle */; };
-		183BC8421D639BF1004D6988 /* play_audio@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 183BC8401D639BF1004D6988 /* play_audio@2x.png */; };
-		183BC8431D639BF1004D6988 /* play_audio@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 183BC8411D639BF1004D6988 /* play_audio@3x.png */; };
-		183BC8461D639C0A004D6988 /* pause_audio@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 183BC8441D639C0A004D6988 /* pause_audio@2x.png */; };
-		183BC8471D639C0A004D6988 /* pause_audio@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 183BC8451D639C0A004D6988 /* pause_audio@3x.png */; };
 		183BC8491D63AD92004D6988 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 183BC8481D63AD92004D6988 /* AVFoundation.framework */; };
-		183BC8551D6E2EC2004D6988 /* transparentImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 183BC8541D6E2EC2004D6988 /* transparentImage.png */; };
-		183BC85B1D6E39A7004D6988 /* audio-wave-png.png in Resources */ = {isa = PBXBuildFile; fileRef = 183BC85A1D6E39A7004D6988 /* audio-wave-png.png */; };
+		18C70C1B1DE56EDF007D94F0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C70C1A1DE56EDF007D94F0 /* AppDelegate.swift */; };
+		18C70C1D1DE56EEA007D94F0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C70C1C1DE56EEA007D94F0 /* ViewController.swift */; };
+		18C70C241DE56EFF007D94F0 /* audio-wave-png.png in Resources */ = {isa = PBXBuildFile; fileRef = 18C70C1E1DE56EFF007D94F0 /* audio-wave-png.png */; };
+		18C70C251DE56EFF007D94F0 /* pause_audio@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18C70C1F1DE56EFF007D94F0 /* pause_audio@2x.png */; };
+		18C70C261DE56EFF007D94F0 /* pause_audio@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18C70C201DE56EFF007D94F0 /* pause_audio@3x.png */; };
+		18C70C271DE56EFF007D94F0 /* play_audio@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18C70C211DE56EFF007D94F0 /* play_audio@2x.png */; };
+		18C70C281DE56EFF007D94F0 /* play_audio@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18C70C221DE56EFF007D94F0 /* play_audio@3x.png */; };
+		18C70C291DE56EFF007D94F0 /* transparentImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 18C70C231DE56EFF007D94F0 /* transparentImage.png */; };
+		18C70C301DE56F13007D94F0 /* RETrimControl in Resources */ = {isa = PBXBuildFile; fileRef = 18C70C2A1DE56F13007D94F0 /* RETrimControl */; };
+		18C70C311DE56F13007D94F0 /* RETrimControl.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 18C70C2B1DE56F13007D94F0 /* RETrimControl.bundle */; };
+		18C70C321DE56F13007D94F0 /* RETrimControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C70C2D1DE56F13007D94F0 /* RETrimControl.m */; };
+		18C70C331DE56F13007D94F0 /* RETrimPopover.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C70C2F1DE56F13007D94F0 /* RETrimPopover.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		183BC8111D637945004D6988 /* AudioEditor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AudioEditor.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		183BC8141D637945004D6988 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		183BC8161D637945004D6988 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		183BC81B1D637945004D6988 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		183BC81E1D637945004D6988 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		183BC8201D637945004D6988 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		183BC8351D637D5D004D6988 /* AudioEditor-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AudioEditor-Bridging-Header.h"; sourceTree = "<group>"; };
-		183BC8361D637D5E004D6988 /* RETrimControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RETrimControl.h; sourceTree = "<group>"; };
-		183BC8371D637D5E004D6988 /* RETrimControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RETrimControl.m; sourceTree = "<group>"; };
-		183BC8381D637D5E004D6988 /* RETrimPopover.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RETrimPopover.h; sourceTree = "<group>"; };
-		183BC8391D637D5E004D6988 /* RETrimPopover.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RETrimPopover.m; sourceTree = "<group>"; };
-		183BC83C1D637D8A004D6988 /* RETrimControl.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = RETrimControl.bundle; sourceTree = "<group>"; };
-		183BC8401D639BF1004D6988 /* play_audio@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "play_audio@2x.png"; sourceTree = "<group>"; };
-		183BC8411D639BF1004D6988 /* play_audio@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "play_audio@3x.png"; sourceTree = "<group>"; };
-		183BC8441D639C0A004D6988 /* pause_audio@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pause_audio@2x.png"; sourceTree = "<group>"; };
-		183BC8451D639C0A004D6988 /* pause_audio@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pause_audio@3x.png"; sourceTree = "<group>"; };
 		183BC8481D63AD92004D6988 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		183BC8541D6E2EC2004D6988 /* transparentImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = transparentImage.png; sourceTree = "<group>"; };
-		183BC85A1D6E39A7004D6988 /* audio-wave-png.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "audio-wave-png.png"; sourceTree = "<group>"; };
+		18C70C1A1DE56EDF007D94F0 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Singletons/AppDelegate.swift; sourceTree = "<group>"; };
+		18C70C1C1DE56EEA007D94F0 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = "View Controllers/ViewController.swift"; sourceTree = "<group>"; };
+		18C70C1E1DE56EFF007D94F0 /* audio-wave-png.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "audio-wave-png.png"; path = "Resources/audio-wave-png.png"; sourceTree = "<group>"; };
+		18C70C1F1DE56EFF007D94F0 /* pause_audio@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "pause_audio@2x.png"; path = "Resources/pause_audio@2x.png"; sourceTree = "<group>"; };
+		18C70C201DE56EFF007D94F0 /* pause_audio@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "pause_audio@3x.png"; path = "Resources/pause_audio@3x.png"; sourceTree = "<group>"; };
+		18C70C211DE56EFF007D94F0 /* play_audio@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "play_audio@2x.png"; path = "Resources/play_audio@2x.png"; sourceTree = "<group>"; };
+		18C70C221DE56EFF007D94F0 /* play_audio@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "play_audio@3x.png"; path = "Resources/play_audio@3x.png"; sourceTree = "<group>"; };
+		18C70C231DE56EFF007D94F0 /* transparentImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = transparentImage.png; path = Resources/transparentImage.png; sourceTree = "<group>"; };
+		18C70C2A1DE56F13007D94F0 /* RETrimControl */ = {isa = PBXFileReference; lastKnownFileType = folder; name = RETrimControl; path = Helpers/RETrimControl; sourceTree = "<group>"; };
+		18C70C2B1DE56F13007D94F0 /* RETrimControl.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = RETrimControl.bundle; path = Helpers/RETrimControl.bundle; sourceTree = "<group>"; };
+		18C70C2C1DE56F13007D94F0 /* RETrimControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RETrimControl.h; path = Helpers/RETrimControl.h; sourceTree = "<group>"; };
+		18C70C2D1DE56F13007D94F0 /* RETrimControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RETrimControl.m; path = Helpers/RETrimControl.m; sourceTree = "<group>"; };
+		18C70C2E1DE56F13007D94F0 /* RETrimPopover.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RETrimPopover.h; path = Helpers/RETrimPopover.h; sourceTree = "<group>"; };
+		18C70C2F1DE56F13007D94F0 /* RETrimPopover.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RETrimPopover.m; path = Helpers/RETrimPopover.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +62,6 @@
 		183BC8081D637945004D6988 = {
 			isa = PBXGroup;
 			children = (
-				183BC8481D63AD92004D6988 /* AVFoundation.framework */,
 				183BC8131D637945004D6988 /* AudioEditor */,
 				183BC8121D637945004D6988 /* Products */,
 			);
@@ -77,10 +78,11 @@
 		183BC8131D637945004D6988 /* AudioEditor */ = {
 			isa = PBXGroup;
 			children = (
+				18C70C191DE56DEC007D94F0 /* Singletons */,
+				18C70C181DE56DB4007D94F0 /* View Controllers */,
 				183BC83F1D639BC6004D6988 /* Resources */,
-				183BC83E1D639BAF004D6988 /* ThirdParty */,
-				183BC8141D637945004D6988 /* AppDelegate.swift */,
-				183BC8161D637945004D6988 /* ViewController.swift */,
+				183BC83E1D639BAF004D6988 /* Helpers */,
+				18C70C341DE56F26007D94F0 /* Frameworks */,
 				183BC81B1D637945004D6988 /* Assets.xcassets */,
 				183BC81D1D637945004D6988 /* LaunchScreen.storyboard */,
 				183BC8201D637945004D6988 /* Info.plist */,
@@ -89,29 +91,54 @@
 			path = AudioEditor;
 			sourceTree = "<group>";
 		};
-		183BC83E1D639BAF004D6988 /* ThirdParty */ = {
+		183BC83E1D639BAF004D6988 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				183BC83C1D637D8A004D6988 /* RETrimControl.bundle */,
-				183BC8361D637D5E004D6988 /* RETrimControl.h */,
-				183BC8371D637D5E004D6988 /* RETrimControl.m */,
-				183BC8381D637D5E004D6988 /* RETrimPopover.h */,
-				183BC8391D637D5E004D6988 /* RETrimPopover.m */,
+				18C70C2A1DE56F13007D94F0 /* RETrimControl */,
+				18C70C2B1DE56F13007D94F0 /* RETrimControl.bundle */,
+				18C70C2C1DE56F13007D94F0 /* RETrimControl.h */,
+				18C70C2D1DE56F13007D94F0 /* RETrimControl.m */,
+				18C70C2E1DE56F13007D94F0 /* RETrimPopover.h */,
+				18C70C2F1DE56F13007D94F0 /* RETrimPopover.m */,
 			);
-			name = ThirdParty;
+			name = Helpers;
 			sourceTree = "<group>";
 		};
 		183BC83F1D639BC6004D6988 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				183BC85A1D6E39A7004D6988 /* audio-wave-png.png */,
-				183BC8541D6E2EC2004D6988 /* transparentImage.png */,
-				183BC8441D639C0A004D6988 /* pause_audio@2x.png */,
-				183BC8451D639C0A004D6988 /* pause_audio@3x.png */,
-				183BC8401D639BF1004D6988 /* play_audio@2x.png */,
-				183BC8411D639BF1004D6988 /* play_audio@3x.png */,
+				18C70C1E1DE56EFF007D94F0 /* audio-wave-png.png */,
+				18C70C1F1DE56EFF007D94F0 /* pause_audio@2x.png */,
+				18C70C201DE56EFF007D94F0 /* pause_audio@3x.png */,
+				18C70C211DE56EFF007D94F0 /* play_audio@2x.png */,
+				18C70C221DE56EFF007D94F0 /* play_audio@3x.png */,
+				18C70C231DE56EFF007D94F0 /* transparentImage.png */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		18C70C181DE56DB4007D94F0 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				18C70C1C1DE56EEA007D94F0 /* ViewController.swift */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		18C70C191DE56DEC007D94F0 /* Singletons */ = {
+			isa = PBXGroup;
+			children = (
+				18C70C1A1DE56EDF007D94F0 /* AppDelegate.swift */,
+			);
+			name = Singletons;
+			sourceTree = "<group>";
+		};
+		18C70C341DE56F26007D94F0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				183BC8481D63AD92004D6988 /* AVFoundation.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -173,15 +200,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				183BC85B1D6E39A7004D6988 /* audio-wave-png.png in Resources */,
-				183BC83D1D637D8A004D6988 /* RETrimControl.bundle in Resources */,
-				183BC8461D639C0A004D6988 /* pause_audio@2x.png in Resources */,
-				183BC8471D639C0A004D6988 /* pause_audio@3x.png in Resources */,
-				183BC8421D639BF1004D6988 /* play_audio@2x.png in Resources */,
+				18C70C311DE56F13007D94F0 /* RETrimControl.bundle in Resources */,
+				18C70C251DE56EFF007D94F0 /* pause_audio@2x.png in Resources */,
+				18C70C291DE56EFF007D94F0 /* transparentImage.png in Resources */,
+				18C70C241DE56EFF007D94F0 /* audio-wave-png.png in Resources */,
+				18C70C271DE56EFF007D94F0 /* play_audio@2x.png in Resources */,
+				18C70C301DE56F13007D94F0 /* RETrimControl in Resources */,
+				18C70C261DE56EFF007D94F0 /* pause_audio@3x.png in Resources */,
 				183BC81F1D637945004D6988 /* LaunchScreen.storyboard in Resources */,
+				18C70C281DE56EFF007D94F0 /* play_audio@3x.png in Resources */,
 				183BC81C1D637945004D6988 /* Assets.xcassets in Resources */,
-				183BC8431D639BF1004D6988 /* play_audio@3x.png in Resources */,
-				183BC8551D6E2EC2004D6988 /* transparentImage.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -192,10 +220,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				183BC83B1D637D5E004D6988 /* RETrimPopover.m in Sources */,
-				183BC83A1D637D5E004D6988 /* RETrimControl.m in Sources */,
-				183BC8171D637945004D6988 /* ViewController.swift in Sources */,
-				183BC8151D637945004D6988 /* AppDelegate.swift in Sources */,
+				18C70C331DE56F13007D94F0 /* RETrimPopover.m in Sources */,
+				18C70C321DE56F13007D94F0 /* RETrimControl.m in Sources */,
+				18C70C1D1DE56EEA007D94F0 /* ViewController.swift in Sources */,
+				18C70C1B1DE56EDF007D94F0 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
